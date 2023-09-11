@@ -1,0 +1,43 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.asteroidradar.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_from_left"
+            app:popEnterAnim="@anim/enter_from_left"
+            app:popExitAnim="@anim/exit_from_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_pictureFragment"
+            app:destination="@id/pictureFragment"
+            app:enterAnim="@anim/enter_from_above"
+            app:exitAnim="@anim/exit_from_below"
+            app:popEnterAnim="@anim/enter_from_below"
+            app:popExitAnim="@anim/exit_from_above" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.asteroidradar.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+
+        <argument
+            android:name="selectedAsteroid"
+            app:argType="com.example.asteroidradar.model.Asteroid"/>
+    </fragment>
+    <fragment
+        android:id="@+id/pictureFragment"
+        android:name="com.example.asteroidradar.detail.PictureFragment"
+        android:label="PictureFragment" />
+
+</navigation>
